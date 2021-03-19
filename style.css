@@ -77,6 +77,7 @@
   color: #edebec;
   border: none;
   font-family: inherit;
+  margin-top: 20px;
 }
 
 #add:focus {
@@ -123,7 +124,7 @@
   background: white;
   border-radius: 0 4px 4px 4px;
   padding: 10px 16px;
-  max-width: 15ch;
+  max-width: 146px;
 }
 
 .bubble p {

@@ -1,21 +1,21 @@
 const messages = document.getElementById("messages");
 const textbox = document.getElementById("textbox");
+const textForm = document.getElementById("textform");
 
+textForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const newContainer = document.createElement("div");
+  newContainer.classList.add("message");
+  const newMessage = `<div class="message" >
+                        <a href="index.html">
+                          <img src="img/user.jpeg" alt="portrait" class="img-circle">
+                        </a>
+                        <div class="bubble left "><p> ${textbox.value} </p></div>
+                      </div>`;
+  messages.insertAdjacentHTML("beforeend", newMessage);
+  messages.lastElementChild.scrollIntoView();
+  textbox.value = "";
 
-textbox.addEventListener("keypress", function(event){
-  if (event.keyCode === 13) {
-    const newContainer = document.createElement("div");
-    newContainer.classList.add("message");
-    const newMessage = `<div class="message" >
-                          <a href="index.html">
-                            <img src="img/user.jpeg" alt="portrait" class="img-circle">
-                          </a>
-                          <div class="bubble left "><p> ${textbox.value} </p></div>
-                        </div>`
-    messages.insertAdjacentHTML("beforeend", newMessage);
-    messages.lastElementChild.scrollIntoView();
-    textbox.value = "";
-  }
 });
 
 setTimeout(() => {
